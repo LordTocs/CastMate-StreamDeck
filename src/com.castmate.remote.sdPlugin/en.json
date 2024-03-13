@@ -7,14 +7,8 @@
     "Tooltip": "Triggers Remote Button in CastMate"
   },
   "Localization": {
-    "More info": "More info",
-    "Message": "Message",
-    "Click Me": "Click Me",
-    "Button": "Button",
-    "More": "More",
-    "My name": "My name",
-    "My title": "My title",
-    "My message": "My message",
-    "My button": "My button"
+   "CastMate IP": "CastMate IP",
+   "CastMate Port": "CastMate Port",
+   "Button": "Button"
   }
 }

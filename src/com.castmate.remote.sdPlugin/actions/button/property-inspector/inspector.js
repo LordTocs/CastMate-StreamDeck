@@ -5,7 +5,13 @@ function getGlobalSettingForm() {
     return document.querySelector('#global-settings');
 }
 
+function getButtonSelect() {
+    return document.querySelector("#button-select")
+}
+
 let globalSettings = {}
+
+const debouncedUpdateButtonSelector = Utils.debounce(150, () => updateButtonSelector())
 
 $PI.onConnected((jsn) => {
     const form = document.querySelector('#property-inspector');
@@ -17,6 +23,12 @@ $PI.onConnected((jsn) => {
     Utils.setFormValue(settings, form);
     
     $PI.getGlobalSettings()
+
+    const select = getButtonSelect()
+
+    select.addEventListener("mousedown", (ev) => {
+        debouncedUpdateButtonSelector()
+    })
 
     form.addEventListener(
         'input',
@@ -40,17 +52,57 @@ $PI.onDidReceiveGlobalSettings(({payload}) => {
     const globalForm = getGlobalSettingForm();
     Utils.setFormValue(payload.settings, globalForm)
     globalSettings = payload.settings
+    debouncedUpdateButtonSelector()
 })
 
-/**
- * Provide window level functions to use in the external window
- * (this can be removed if the external window is not used)
- */
-window.sendToInspector = (data) => {
-    console.log(data);
-};
+async function getCastMateButtons() {
+	try {
+		const resp = await fetch(`http://${globalSettings.castMateIp}:${globalSettings.castMatePort}/plugins/remote/buttons`, { method: 'get'})
+		const data = await resp.json()
+		return data.buttons ?? []
+	} catch(err) {
+		console.error(err)
+		return []
+	}
+}
 
-document.querySelector('#open-external').addEventListener('click', () => {
-    window.open('../../../external.html');
-});
+/**
+ * 
+ * @param {HTMLElement} select 
+ */
+function clearSelect(select) {
+    while(select.firstChild) {
+        select.removeChild(select.firstChild)
+    }
+}
+
+/**
+ * 
+ * @param {HTMLElement} select 
+ * @param {string[]} options
+ */
+function populateSelect(select, options) {
+    const unset = document.createElement("option")
+    select.appendChild(unset)
+
+    for (const optionStr of options) {
+        const option = document.createElement("option")
+
+        option.value = optionStr
+        option.innerHTML = optionStr
+
+        select.appendChild(option)
+    }
+}
+
+async function updateButtonSelector() {
+    console.log("Updating CastMate Button List")
+    const select = getButtonSelect()
+    if (!select) return
+
+    const buttons = await getCastMateButtons()
+
+    clearSelect(select)
+    populateSelect(select, buttons)
+}
 
