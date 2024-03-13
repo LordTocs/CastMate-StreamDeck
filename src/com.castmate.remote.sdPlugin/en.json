@@ -1,10 +1,10 @@
 {
-  "Description": "Use this to create your own plugin", 
-  "Name": "Stream Deck Template", 
+  "Name": "CastMate", 
+  "Description": "Allows you to trigger CastMate from your Stream Deck.", 
   "Category": "Templates", 
   "com.castmate.remote.button": {
-    "Name": "Action", 
-    "Tooltip": "This is the only action in this plugin"
+    "Name": "CastMate Remote", 
+    "Tooltip": "Triggers Remote Button in CastMate"
   },
   "Localization": {
     "More info": "More info",

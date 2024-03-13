@@ -30,7 +30,7 @@
 			],
 			"Tooltip": "This is an example tooltip",
 			"UUID": "com.castmate.remote.button",
-			"PropertyInspectorPath": "actions/remote-button/property-inspector/inspector.html"
+			"PropertyInspectorPath": "actions/button/property-inspector/inspector.html"
 		}
 	]
 }
