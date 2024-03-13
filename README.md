@@ -71,3 +71,11 @@ myAction.onDialRotate(({ action, context, device, event, payload }) => {
   console.log('Your dial code goes here!');
 });
 ```
+
+### Debugging Instructions
+
+https://streamdecklabs.com/debugging-your-javascript-plugin/
+
+In HKEY_CURRENT_USER\Software\Elgato Systems GmbH\StreamDeck
+Set html_remote_debugging_enabled with DWORD value 1
+In something chromium based open http://localhost:23654/ 
