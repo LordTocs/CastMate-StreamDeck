@@ -1,1 +1,1 @@
-mklink /d %appdata%\Elgato\StreamDeck\Plugins\com.castmate.remote.sdPlugin %~dp0Sources\com.castmate.remote.sdPlugin
+mklink /d %appdata%\Elgato\StreamDeck\Plugins\com.castmate.remote.sdPlugin %~dp0src\com.castmate.remote.sdPlugin
