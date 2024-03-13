@@ -1,0 +1,36 @@
+{
+	"SDKVersion": 2,
+	"Author": "LordTocs",
+	"CodePath": "app.html",
+	"Description": "Allows you to trigger CastMate from your Stream Deck.",
+	"Name": "CastMate",
+	"Icon": "assets/images/castmate",
+	"URL": "https://www.castmate.io",
+	"Version": "1.0.0",
+	"Software": {
+		"MinimumVersion": "5.0"
+	},
+	"OS": [
+		{
+			"Platform": "windows",
+			"MinimumVersion": "10"
+		}
+	],
+	"Category": "CastMate",
+	"CategoryIcon": "assets/images/castmate",
+	"Actions": [
+		{
+			"Icon": "assets/images/castmate",
+			"Name": "CastMate Remote",
+			"Controllers": ["Keypad"],
+			"States": [
+				{
+					"Image": "assets/images/castmate"
+				}
+			],
+			"Tooltip": "This is an example tooltip",
+			"UUID": "com.castmate.remote.button",
+			"PropertyInspectorPath": "actions/remote-button/property-inspector/inspector.html"
+		}
+	]
+}
