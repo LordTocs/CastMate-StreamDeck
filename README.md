@@ -1,76 +1,23 @@
 
-# Stream Deck Plugin Template
+# CastMate StreamDeck Plugin
 
-The `Stream Deck Plugin Template` is a template to let you get started quickly when writing a JavaScript plugin for [Stream Deck](https://docs.elgato.com/sdk/). `Stream Deck Plugin Template` requires Stream Deck 6.0 or later.
+This plugin allows the stream deck software to activate a CastMate remote trigger. Either on a button or inside a multi-action. It forms a useful bridge between the two automation softwares. It is only compatible with CastMate 0.5+.
 
-## Description
+## Developer Info
 
-`Stream Deck Plugin Template` is a complete plugin that shows you how to
+### Clone Library
 
-- load and save settings using Stream Deck's persistent store
-- setup and communicate with the Property Inspector
-- pass messages directly from Property Inspector to the plugin (and vice versa)
-- localize your Property Inspector's UI to another language
+Clone the javascript SDK into the libs folder.
 
-## Features
+```git clone https://github.com/elgatosf/streamdeck-javascript-sdk src/com.castmate.remote.sdPlugin/libs```
 
-- code written in Javascript
-- cross-platform (macOS, Windows)
-- localization support
-- styled [Property Inspector](https://developer.elgato.com/documentation/stream-deck/sdk/property-inspector/) included
-- Property Inspector contains all required boilerplate code to let you instantly work on your plugin's code.
+### Setup Symlink
 
-## Quick Start Guide
+Run `SetupSymlink.bat`, it will create a simlink between your dev folder and the stream deck's appdata folder for easy testing.
 
-A short guide to help you get started quickly.
+### Restart StreamDeck Software
 
-### Clone the repo
-
-```git clone https://github.com/elgatosf/streamdeck-plugin-template```
-
-### Replace Name
-
-Rename the folder as well as any references.
-
-`com.castmate.remote.sdPlugin` with `my.domain.plugin-name.sdPlugin`
-
-> [!IMPORTANT]  
-> When sym-linking the plugin, the folder name must end with `.sdPlugin`.
-
-### Get the latest library
-
-You can either clone the javascript library or add it as a submodule to your repository.
-
-#### Clone
-
-```git clone https://github.com/elgatosf/streamdeck-javascript-sdk src/my.domain.plugin-name/libs```
-
-#### Add Submodule
-
-```git submodule add https://github.com/elgatosf/streamdeck-javascript-sdk src/my.domain.plugin-name/libs```
-
-### Start Coding
-
-You can get started in app.js!
-
-```javascript
-const myAction = new Action('com.castmate.remote.button');
-
-/**
- * The first event fired when Stream Deck starts
- */
-$SD.onConnected(({ actionInfo, appInfo, connection, messageType, port, uuid }) => {
-  console.log('Stream Deck connected!');
-});
-
-myAction.onKeyUp(({ action, context, device, event, payload }) => {
-  console.log('Your key code goes here!');
-});
-
-myAction.onDialRotate(({ action, context, device, event, payload }) => {
-  console.log('Your dial code goes here!');
-});
-```
+To see changes you must restart the StreamDeck software, you can use `StartStreamDeck.bat` to run it from commandline allowing you to easily start and stop it from your coding workspace.
 
 ### Debugging Instructions
 
