@@ -8,4 +8,4 @@ package-lock.json
 .history
 __exclude
 .editorconfig
-/src/libs
+/src/com.castmate.remote.sdPlugin/libs
