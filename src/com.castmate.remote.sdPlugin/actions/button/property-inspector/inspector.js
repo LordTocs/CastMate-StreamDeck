@@ -10,6 +10,7 @@ function getButtonSelect() {
 }
 
 let globalSettings = {}
+let localSettings = {}
 
 const debouncedUpdateButtonSelector = Utils.debounce(150, () => updateButtonSelector())
 
@@ -20,6 +21,7 @@ $PI.onConnected((jsn) => {
     const {payload, context} = actionInfo;
     const {settings} = payload;
 
+    localSettings = settings
     Utils.setFormValue(settings, form);
     
     $PI.getGlobalSettings()
@@ -34,6 +36,7 @@ $PI.onConnected((jsn) => {
         'input',
         Utils.debounce(150, () => {
             const value = Utils.getFormValue(form);
+            localSettings = value
             $PI.setSettings(value);
         })
     );
@@ -104,5 +107,10 @@ async function updateButtonSelector() {
 
     clearSelect(select)
     populateSelect(select, buttons)
+    //Reset value. Seems like the select can't hold a value it doesn't have an option for.
+    //Reset the value from the local settings after we've queried it.
+    select.value = localSettings.button
+
+
 }
 
