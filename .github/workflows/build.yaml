@@ -7,25 +7,25 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     steps:
       - name: "Checkout"
         uses: actions/checkout@v2
       - name: "Clone SDK"
         run: git clone https://github.com/elgatosf/streamdeck-javascript-sdk src/com.castmate.remote.sdPlugin/libs
       - name: StreamDeck Distribution Tool
-        uses: AdamCarballo/streamdeck-distribution-tool@v1
+        uses: AdamCarballo/streamdeck-distribution-tool@v3
         with:
           input: com.castmate.remote.sdPlugin
           output: release
           working-directory: src
       - name: get-npm-version
         id: package-version
-        uses: martinbeentjes/npm-get-version-action@v1.3.1
+        uses: beaconbrigade/package-json-version@v0.3
       - name: "Create Release Draft"
         uses: softprops/action-gh-release@v2
         with:
           files: ./release/com.castmate.remote.sdPlugin
           draft: true
-          tag_name: v${{ steps.package-version.outputs.current-version}}
+          tag_name: v${{ steps.package-version.outputs.version }}
 
