@@ -4,9 +4,9 @@
 	"CodePath": "app.html",
 	"Description": "Allows you to trigger CastMate from your Stream Deck.",
 	"Name": "CastMate",
-	"Icon": "assets/images/castmate",
+	"Icon": "assets/images/castmate-plugin-icon",
 	"URL": "https://www.castmate.io",
-	"Version": "1.0.0",
+	"Version": "0.0.1",
 	"Software": {
 		"MinimumVersion": "5.0"
 	},
