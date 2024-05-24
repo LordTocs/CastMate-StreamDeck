@@ -19,7 +19,7 @@ jobs:
         uses: AdamCarballo/streamdeck-distribution-tool@v1.0.2
         with:
           input: com.castmate.remote.sdPlugin
-          output: release
+          output: ../release
           working-directory: src
       - name: get-npm-version
         id: package-version
