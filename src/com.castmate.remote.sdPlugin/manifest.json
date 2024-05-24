@@ -25,7 +25,7 @@
 			"Controllers": ["Keypad"],
 			"States": [
 				{
-					"Image": "assets/images/castmate"
+					"Image": "assets/images/castmate-action-smaller"
 				}
 			],
 			"Tooltip": "This is an example tooltip",
