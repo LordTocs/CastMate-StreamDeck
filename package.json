@@ -1,0 +1,19 @@
+{
+  "name": "castmate-streamdeck",
+  "version": "0.0.1",
+  "description": "This plugin allows the stream deck software to activate a CastMate remote trigger. Either on a button or inside a multi-action. It forms a useful bridge between the two automation softwares. It is only compatible with CastMate 0.5+.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LordTocs/CastMate-StreamDeck.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LordTocs/CastMate-StreamDeck/issues"
+  },
+  "homepage": "https://github.com/LordTocs/CastMate-StreamDeck#readme"
+}
