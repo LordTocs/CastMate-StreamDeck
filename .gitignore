@@ -8,3 +8,4 @@ package-lock.json
 __exclude
 .editorconfig
 /src/com.castmate.remote.sdPlugin/libs
+DistributionTool.exe

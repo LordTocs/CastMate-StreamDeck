@@ -27,7 +27,7 @@ jobs:
       - name: "Create Release Draft"
         uses: softprops/action-gh-release@v2
         with:
-          files: ./release/com.castmate.remote.sdPlugin
+          files: ./release/com.castmate.remote.streamDeckPlugin
           draft: true
           tag_name: v${{ steps.package-version.outputs.version }}
 
