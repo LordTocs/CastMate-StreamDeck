@@ -7,7 +7,7 @@ This plugin allows the stream deck software to activate a CastMate remote trigge
 
 ### Clone Library
 
-Clone the javascript SDK into the libs folder.
+Clone the javascript SDK into the libs folder, don't worry it's gitignored.
 
 ```git clone https://github.com/elgatosf/streamdeck-javascript-sdk src/com.castmate.remote.sdPlugin/libs```
 
